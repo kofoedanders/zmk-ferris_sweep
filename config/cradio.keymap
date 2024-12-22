@@ -46,43 +46,62 @@
             tapping-term-ms = <200>;
             bindings = <&kp TAB>, <&kp LALT>;
         };
+
+        // Norwegian letters (custom macros)
+        aa_macro: aa_macro { compatible = "zmk,behavior-macro"; bindings = <&kp LALT &kp W>; };
+        ae_macro: ae_macro { compatible = "zmk,behavior-macro"; bindings = <&kp LALT &kp Q>; };
+        oe_macro: oe_macro { compatible = "zmk,behavior-macro"; bindings = <&kp LALT &kp L>; };
+
+        // Undo, Redo, Cut, Copy, Paste
+        undo_macro: undo_macro { compatible = "zmk,behavior-macro"; bindings = <&kp LGUI &kp Z>; };
+        redo_macro: redo_macro { compatible = "zmk,behavior-macro"; bindings = <&kp LGUI &kp LSFT &kp Z>; };
+        cut_macro: cut_macro { compatible = "zmk,behavior-macro"; bindings = <&kp LGUI &kp X>; };
+        copy_macro: copy_macro { compatible = "zmk,behavior-macro"; bindings = <&kp LGUI &kp C>; };
+        paste_macro: paste_macro { compatible = "zmk,behavior-macro"; bindings = <&kp LGUI &kp V>; };
+
+        // Percent (%) key
+        prcnt_macro: prcnt_macro { compatible = "zmk,behavior-macro"; bindings = <&kp LSFT &kp N5>; };
+
+        // Right Alt + Right Arrow
+        ralt_rght: ralt_rght { compatible = "zmk,behavior-mod-morph"; mods = <(MOD_RALT)>; bindings = <&kp RIGHT>; };
     };
+
     keymap {
         compatible = "zmk,keymap";
 
         layer0 {
             display-name = "COLEMAK";
             bindings = <
-                &kp OE           &kp W            &kp F            &kp P            &kp B                                                               &kp J            &kp L            &kp U            &kp Y            &kp AA
-                &lsft_a          &lalt_r          &lctl_s          &lgui_t          &kp G                                                               &kp M            &rgui_n          &rctl_e          &ralt_i          &rsft_o
-                &kp Z            &kp X            &kp C            &kp D            &kp V                                                               &kp K            &kp H            &kp COMMA        &kp DOT          &kp AE
+                &oe_macro       &kp W            &kp F            &kp P            &kp B                                                               &kp J            &kp L            &kp U            &kp Y            &aa_macro
+                &lsft_a         &lalt_r          &lctl_s          &lgui_t          &kp G                                                               &kp M            &rgui_n          &rctl_e          &ralt_i          &rsft_o
+                &kp Z           &kp X            &kp C            &kp D            &kp V                                                               &kp K            &kp H            &kp COMMA        &kp DOT          &ae_macro
                                                                     &kp LGUI         &lt 2 SPACE                                                         &lt 3 BSPC       &lt 1 TAB >;
         };
 
         layer1 {
             display-name = "LEFTTHUMB";
             bindings = <
-                &kp EXCL         &kp AT           &kp HASH         &kp DLLR         &kp PRCNT                                                           &kp ESC          &none            &kp RALT_RGHT    &kp RALT_LEFT    &none
-                &kp LSFT_CIRC    &kp AMPS         &kp ASTRK        &kp BSLH         &kp PIPE                                                            &none            &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT
-                &kp TILDE        &kp GRAVE        &none            &none            &kp Q                                                               &none            &none            &none            &none            &none
+                &kp EXCL        &kp AT           &kp HASH         &kp DLLR         &prcnt_macro                                                       &kp ESC          &none            &ralt_rght       &kp RALT_LEFT    &none
+                &kp LSFT_CIRC   &kp AMPS         &kp ASTRK        &kp BSLH         &kp PIPE                                                            &none            &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT
+                &kp TILDE       &kp GRAVE        &none            &none            &kp Q                                                               &none            &none            &none            &none            &none
                                                                     &none            &none                                                               &alt_tab         &kp LGUI_GRAVE >;
         };
 
         layer2 {
             display-name = "RTHUMB";
             bindings = <
-                &kp ASTRK        &kp N7           &kp N8           &kp N9           &kp PLUS                                                            &kp RBKT         &kp RPAR         &kp RCBR         &kp SQT          &kp MINUS
-                &kp PSLS         &kp N4           &kp N5           &kp N6           &kp MINUS                                                           &kp LBKT         &kp LPAR         &kp LCBR         &kp DQT          &kp UNDER
-                &kp COMMA        &kp N1           &kp N2           &kp N3           &kp EQL                                                             &kp COLON        &kp SEMI         &kp LT           &kp GT           &kp QMARK
+                &kp ASTRK       &kp N7           &kp N8           &kp N9           &kp PLUS                                                            &kp RBKT         &kp RPAR         &kp RCBR         &kp SQT          &kp MINUS
+                &kp PSLS        &kp N4           &kp N5           &kp N6           &kp MINUS                                                           &kp LBKT         &kp LPAR         &kp LCBR         &kp DQT          &kp UNDER
+                &kp COMMA       &kp N1           &kp N2           &kp N3           &kp EQL                                                             &kp COLON        &kp SEMI         &kp LT           &kp GT           &kp QMARK
                                                                     &kp N0           &kp ENTER                                                            &none            &none >;
         };
 
         layer3 {
             display-name = "FUNC";
             bindings = <
-                &bootloader      &kp F7           &kp F8           &kp F9           &kp F12                                                             &kp RSG_4        &kp LCA_H        &kp LCA_J        &kp LCA_K        &kp LCA_L
-                &none            &kp F4           &kp F5           &kp F6           &kp F11                                                             &none            &kp LCTL_H       &kp LCTL_J       &kp LCTL_K       &kp LCTL_L
-                &none            &kp F1           &kp F2           &kp F3           &kp F10                                                             &none            &none            &none            &none            &none
+                &bootloader     &kp F7           &kp F8           &kp F9           &kp F12                                                             &redo_macro      &cut_macro       &copy_macro      &paste_macro     &undo_macro
+                &none           &kp F4           &kp F5           &kp F6           &kp F11                                                             &none            &kp LCTL_H       &kp LCTL_J       &kp LCTL_K       &kp LCTL_L
+                &none           &kp F1           &kp F2           &kp F3           &kp F10                                                             &none            &none            &none            &none            &none
                                                                     &kp OSM_MEH      &kp LGUI_SPACE                                                      &none            &none >;
         };
     };
