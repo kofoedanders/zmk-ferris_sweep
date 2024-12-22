@@ -21,32 +21,53 @@
         zmk,charmap = &charmap_us;
     };
     behaviors {
-        lsk: layer_sticky_key { 
-            compatible = "zmk,behavior-hold-tap";  
-            #binding-cells = <2>; 
-            flavor = "hold-preferred"; 
-            tapping-term-ms = <200>; 
-            bindings = <&mo>, <&sk>; 
+        // Home row mods
+        lsft_a: lsft_a { compatible = "zmk,behavior-mod-morph"; mods = <(MOD_LSFT)>; bindings = <&kp A>; };
+        lalt_r: lalt_r { compatible = "zmk,behavior-mod-morph"; mods = <(MOD_LALT)>; bindings = <&kp R>; };
+        lctl_s: lctl_s { compatible = "zmk,behavior-mod-morph"; mods = <(MOD_LCTL)>; bindings = <&kp S>; };
+        lgui_t: lgui_t { compatible = "zmk,behavior-mod-morph"; mods = <(MOD_LGUI)>; bindings = <&kp T>; };
+
+        rsft_o: rsft_o { compatible = "zmk,behavior-mod-morph"; mods = <(MOD_RSFT)>; bindings = <&kp O>; };
+        ralt_i: ralt_i { compatible = "zmk,behavior-mod-morph"; mods = <(MOD_RALT)>; bindings = <&kp I>; };
+        rctl_e: rctl_e { compatible = "zmk,behavior-mod-morph"; mods = <(MOD_RCTL)>; bindings = <&kp E>; };
+        rgui_n: rgui_n { compatible = "zmk,behavior-mod-morph"; mods = <(MOD_RGUI)>; bindings = <&kp N>; };
+
+        // Tap-dance-like behavior for Q/ESC
+        td_q_esc: td_q_esc {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&kp Q>, <&kp ESC>;
+        };
+
+        // ALT+TAB custom behavior
+        alt_tab: alt_tab {
+            compatible = "zmk,behavior-tap-hold";
+            tapping-term-ms = <200>;
+            bindings = <&kp TAB>, <&kp LALT>;
         };
     };
     keymap {
         compatible = "zmk,keymap";
+
         layer0 {
             display-name = "COLEMAK";
             bindings = <
-                &kp O           &kp W            &kp F            &kp P            &kp B                                                               &kp J            &kp L            &kp U            &kp Y            &kp A
-                &kp A       &kp R       &kp S       &kp T        &kp G                                                               &kp M            &kp N       &kp E       &kp I       &kp O
-                &kp Z            &kp X            &kp C            &kp D            &kp V                                                               &kp K            &kp H            &kp COMMA        &kp DOT          &kp E
+                &kp OE           &kp W            &kp F            &kp P            &kp B                                                               &kp J            &kp L            &kp U            &kp Y            &kp AA
+                &lsft_a          &lalt_r          &lctl_s          &lgui_t          &kp G                                                               &kp M            &rgui_n          &rctl_e          &ralt_i          &rsft_o
+                &kp Z            &kp X            &kp C            &kp D            &kp V                                                               &kp K            &kp H            &kp COMMA        &kp DOT          &kp AE
                                                                     &kp LGUI         &lt 2 SPACE                                                         &lt 3 BSPC       &lt 1 TAB >;
         };
+
         layer1 {
             display-name = "LEFTTHUMB";
             bindings = <
                 &kp EXCL         &kp AT           &kp HASH         &kp DLLR         &kp PRCNT                                                           &kp ESC          &none            &kp RALT_RGHT    &kp RALT_LEFT    &none
                 &kp LSFT_CIRC    &kp AMPS         &kp ASTRK        &kp BSLH         &kp PIPE                                                            &none            &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT
                 &kp TILDE        &kp GRAVE        &none            &none            &kp Q                                                               &none            &none            &none            &none            &none
-                                                                    &none            &none                                                               &kp ALT_TAB      &kp LGUI_GRAVE >;
+                                                                    &none            &none                                                               &alt_tab         &kp LGUI_GRAVE >;
         };
+
         layer2 {
             display-name = "RTHUMB";
             bindings = <
@@ -55,6 +76,7 @@
                 &kp COMMA        &kp N1           &kp N2           &kp N3           &kp EQL                                                             &kp COLON        &kp SEMI         &kp LT           &kp GT           &kp QMARK
                                                                     &kp N0           &kp ENTER                                                            &none            &none >;
         };
+
         layer3 {
             display-name = "FUNC";
             bindings = <
