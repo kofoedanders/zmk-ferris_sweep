@@ -34,9 +34,9 @@
         layer0 {
             display-name = "COLEMAK";
             bindings = <
-                &kp OE           &kp W            &kp F            &kp P            &kp B                                                               &kp J            &kp L            &kp U            &kp Y            &kp AA
-                &kp LSFT_A       &kp LALT_R       &kp LCTL_S       &kp LGUI_T        &kp G                                                               &kp M            &kp RGUI_N       &kp RCTL_E       &kp RALT_I       &kp RSFT_O
-                &kp Z            &kp X            &kp C            &kp D            &kp V                                                               &kp K            &kp H            &kp COMMA        &kp DOT          &kp AE
+                &kp O           &kp W            &kp F            &kp P            &kp B                                                               &kp J            &kp L            &kp U            &kp Y            &kp A
+                &kp A       &kp R       &kp S       &kp T        &kp G                                                               &kp M            &kp N       &kp E       &kp I       &kp O
+                &kp Z            &kp X            &kp C            &kp D            &kp V                                                               &kp K            &kp H            &kp COMMA        &kp DOT          &kp E
                                                                     &kp LGUI         &lt 2 SPACE                                                         &lt 3 BSPC       &lt 1 TAB >;
         };
         layer1 {
