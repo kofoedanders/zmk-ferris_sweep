@@ -32,32 +32,10 @@
         rctl_e: rctl_e { compatible = "zmk,behavior-mod-morph"; mods = <(MOD_RCTL)>; bindings = <&kp E>; };
         rgui_n: rgui_n { compatible = "zmk,behavior-mod-morph"; mods = <(MOD_RGUI)>; bindings = <&kp N>; };
 
-        // Tap-dance-like behavior for Q/ESC
-        td_q_esc: td_q_esc {
-            compatible = "zmk,behavior-hold-tap";
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&kp Q>, <&kp ESC>;
-        };
-
-        // ALT+TAB custom behavior
-        alt_tab: alt_tab {
-            compatible = "zmk,behavior-tap-hold";
-            tapping-term-ms = <200>;
-            bindings = <&kp TAB>, <&kp LALT>;
-        };
-
         // Norwegian letters (custom macros)
         aa_macro: aa_macro { compatible = "zmk,behavior-macro"; bindings = <&kp LALT &kp W>; };
         ae_macro: ae_macro { compatible = "zmk,behavior-macro"; bindings = <&kp LALT &kp Q>; };
         oe_macro: oe_macro { compatible = "zmk,behavior-macro"; bindings = <&kp LALT &kp L>; };
-
-        // Undo, Redo, Cut, Copy, Paste
-        undo_macro: undo_macro { compatible = "zmk,behavior-macro"; bindings = <&kp LGUI &kp Z>; };
-        redo_macro: redo_macro { compatible = "zmk,behavior-macro"; bindings = <&kp LGUI &kp LSFT &kp Z>; };
-        cut_macro: cut_macro { compatible = "zmk,behavior-macro"; bindings = <&kp LGUI &kp X>; };
-        copy_macro: copy_macro { compatible = "zmk,behavior-macro"; bindings = <&kp LGUI &kp C>; };
-        paste_macro: paste_macro { compatible = "zmk,behavior-macro"; bindings = <&kp LGUI &kp V>; };
 
         // Percent (%) key
         prcnt_macro: prcnt_macro { compatible = "zmk,behavior-macro"; bindings = <&kp LSFT &kp N5>; };
@@ -81,7 +59,7 @@
         layer1 {
             display-name = "LEFTTHUMB";
             bindings = <
-                &kp EXCL        &kp AT           &kp HASH         &kp DLLR         &prcnt_macro                                                       &kp ESC          &none            &ralt_rght       &kp RALT_LEFT    &none
+                &kp EXCL        &kp AT           &kp HASH         &kp DLLR         &none                                                    &kp ESC          &none            &ralt_rght       &kp RALT_LEFT    &none
                 &kp LSFT_CIRC   &kp AMPS         &kp ASTRK        &kp BSLH         &kp PIPE                                                            &none            &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT
                 &kp TILDE       &kp GRAVE        &none            &none            &kp Q                                                               &none            &none            &none            &none            &none
                                                                     &none            &none                                                               &alt_tab         &kp LGUI_GRAVE >;
