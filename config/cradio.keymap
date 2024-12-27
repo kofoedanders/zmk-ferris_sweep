@@ -36,7 +36,7 @@
             display-name = "LEFTTHUMB";
             bindings = <
 &kp EXCL    &kp AT    &kp HASH    &kp DLLR    &none    &kp ESC    &none    &none    &none    &none
-&kp CIRC    &kp AMPS    &kp ASTRK    &kp BSLH    &kp PIPE    &none    &kp LEFT    &kp DOWN    &kp UP    &kp RIGHT
+&kp CARET    &kp AMPS    &kp ASTRK    &kp BSLH    &kp PIPE    &none    &kp LEFT    &kp DOWN    &kp UP    &kp RIGHT
 &kp TILDE    &kp GRAVE    &none    &none    &kp Q    &none    &none    &none    &none    &none
         &none    &none        &kp TAB    &kp GRAVE 
 >;
