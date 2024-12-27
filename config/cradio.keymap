@@ -21,27 +21,6 @@
         zmk,charmap = &charmap_us;
     };
     behaviors {
-        // Home row mods
-        lsft_a: lsft_a { compatible = "zmk,behavior-mod-morph"; mods = <(MOD_LSFT)>; bindings = <&kp A>; };
-        lalt_r: lalt_r { compatible = "zmk,behavior-mod-morph"; mods = <(MOD_LALT)>; bindings = <&kp R>; };
-        lctl_s: lctl_s { compatible = "zmk,behavior-mod-morph"; mods = <(MOD_LCTL)>; bindings = <&kp S>; };
-        lgui_t: lgui_t { compatible = "zmk,behavior-mod-morph"; mods = <(MOD_LGUI)>; bindings = <&kp T>; };
-
-        rsft_o: rsft_o { compatible = "zmk,behavior-mod-morph"; mods = <(MOD_RSFT)>; bindings = <&kp O>; };
-        ralt_i: ralt_i { compatible = "zmk,behavior-mod-morph"; mods = <(MOD_RALT)>; bindings = <&kp I>; };
-        rctl_e: rctl_e { compatible = "zmk,behavior-mod-morph"; mods = <(MOD_RCTL)>; bindings = <&kp E>; };
-        rgui_n: rgui_n { compatible = "zmk,behavior-mod-morph"; mods = <(MOD_RGUI)>; bindings = <&kp N>; };
-
-        // Norwegian letters (custom macros)
-        aa_macro: aa_macro { compatible = "zmk,behavior-macro"; bindings = <&kp LALT &kp W>; };
-        ae_macro: ae_macro { compatible = "zmk,behavior-macro"; bindings = <&kp LALT &kp Q>; };
-        oe_macro: oe_macro { compatible = "zmk,behavior-macro"; bindings = <&kp LALT &kp L>; };
-
-        // Percent (%) key
-        prcnt_macro: prcnt_macro { compatible = "zmk,behavior-macro"; bindings = <&kp LSFT &kp N5>; };
-
-        // Right Alt + Right Arrow
-        ralt_rght: ralt_rght { compatible = "zmk,behavior-mod-morph"; mods = <(MOD_RALT)>; bindings = <&kp RIGHT>; };
     };
 
     keymap {
@@ -50,19 +29,21 @@
         layer0 {
             display-name = "COLEMAK";
             bindings = <
-                &oe_macro       &kp W            &kp F            &kp P            &kp B                                                               &kp J            &kp L            &kp U            &kp Y            &aa_macro
-                &lsft_a         &lalt_r          &lctl_s          &lgui_t          &kp G                                                               &kp M            &rgui_n          &rctl_e          &ralt_i          &rsft_o
-                &kp Z           &kp X            &kp C            &kp D            &kp V                                                               &kp K            &kp H            &kp COMMA        &kp DOT          &ae_macro
-                                                                    &kp LGUI         &lt 2 SPACE                                                         &lt 3 BSPC       &lt 1 TAB >;
+&kp O    &kp W    &kp F    &kp P    &kp B    &kp J    &kp L    &kp U    &kp Y    &kp A
+&kp A    &kp R    &kp S    &kp T    &kp G    &kp M    &kp N    &kp E    &kp I    &kp O
+&kp Z    &kp X    &kp C    &kp D    &kp V    &kp K    &kp H    &kp COMMA    &kp DOT    &kp A
+            &kp LGUI    &lt 2 SPACE            &lt 3 BSPC       &lt 1 TAB 
+>;
         };
 
         layer1 {
             display-name = "LEFTTHUMB";
             bindings = <
-                &kp EXCL        &kp AT           &kp HASH         &kp DLLR         &none                                                    &kp ESC          &none            &ralt_rght       &kp RALT_LEFT    &none
-                &kp LSFT_CIRC   &kp AMPS         &kp ASTRK        &kp BSLH         &kp PIPE                                                            &none            &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT
-                &kp TILDE       &kp GRAVE        &none            &none            &kp Q                                                               &none            &none            &none            &none            &none
-                                                                    &none            &none                                                               &alt_tab         &kp LGUI_GRAVE >;
+&kp EXCL    &kp AT    &kp HASH    &kp DLLR    &none    &kp ESC    &none    &ralt_rght    &kp RALT_LEFT    &none
+&kp LSFT_CIRC    &kp AMPS    &kp ASTRK    &kp BSLH    &kp PIPE    &none    &kp LEFT    &kp DOWN    &kp UP    &kp RIGHT
+&kp TILDE    &kp GRAVE    &none    &none    &kp Q    &none    &none    &none    &none    &none
+        &none    &none        &kp TAB    &kp GRAVE 
+>;
         };
 
         layer2 {
