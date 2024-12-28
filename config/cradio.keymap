@@ -35,7 +35,7 @@
             display-name = "COLEMAK";
             bindings = <
 &kp LA(L)    &kp W    &kp F    &kp P    &kp B    &kp J    &kp L    &kp U    &kp Y    &kp LA(W)
-&MT RSHFT A    &MT LALT R    &MT LCTL S    &MT LCMD T    &kp G    &kp M    &MT RCMD N    &MT RCTL E    &MT RALT I    &MT RSHFT O
+&mt RSHFT A    &mt LALT R    &mt LCTL S    &mt LCMD T    &kp G    &kp M    &mt RCMD N    &mt RCTL E    &mt RALT I    &mt RSHFT O
 &kp Z    &kp X    &kp C    &kp D    &kp V    &kp K    &kp H    &kp COMMA    &kp DOT    &kp LA(Q)
             &kp LGUI    &lt 1 SPACE            &lt 2 BSPC       &lt 3 TAB 
 >;
@@ -45,7 +45,7 @@
             display-name = "LEFTTHUMB";
             bindings = <
 &kp EXCL    &kp AT    &kp HASH    &kp DLLR    &none    &kp ESC    &none    &none    &none    &none
-&MT RSHFT CARET    &MT LALT AMPS    &MT LCTL ASTRK    &MT LCMD BSLH    &kp PIPE    &none    &kp LEFT    &kp DOWN    &kp UP    &kp RIGHT
+&mt RSHFT CARET    &mt LALT AMPS    &mt LCTL ASTRK    &mt LCMD BSLH    &kp PIPE    &none    &kp LEFT    &kp DOWN    &kp UP    &kp RIGHT
 &kp TILDE    &kp GRAVE    &none    &none    &kp Q    &none    &none    &none    &none    &none
         &none    &none        &kp TAB    &kp GRAVE 
 >;
