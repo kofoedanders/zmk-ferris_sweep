@@ -12,11 +12,20 @@
     lazy;
 };
 
+&lt {
+    tapping-term-ms = <200>;
+};
+
+&mt {
+    tapping-term-ms = <200>;
+};
+
 / {
     chosen {
         zmk,charmap = &charmap_us;
     };
     behaviors {
+        
     };
 
     keymap {
@@ -25,9 +34,9 @@
         layer0 {
             display-name = "COLEMAK";
             bindings = <
-&kp O    &kp W    &kp F    &kp P    &kp B    &kp J    &kp L    &kp U    &kp Y    &kp A
-&kp A    &kp R    &kp S    &kp T    &kp G    &kp M    &kp N    &kp E    &kp I    &kp O
-&kp Z    &kp X    &kp C    &kp D    &kp V    &kp K    &kp H    &kp COMMA    &kp DOT    &kp A
+&kp LA(L)    &kp W    &kp F    &kp P    &kp B    &kp J    &kp L    &kp U    &kp Y    &kp LA(W)
+&MT RSHFT A    &MT LALT R    &MT LCTL S    &MT LCMD T    &kp G    &kp M    &MT RCMD N    &MT RCTL E    &MT RALT I    &MT RSHFT O
+&kp Z    &kp X    &kp C    &kp D    &kp V    &kp K    &kp H    &kp COMMA    &kp DOT    &kp LA(Q)
             &kp LGUI    &lt 1 SPACE            &lt 2 BSPC       &lt 3 TAB 
 >;
         };
@@ -36,7 +45,7 @@
             display-name = "LEFTTHUMB";
             bindings = <
 &kp EXCL    &kp AT    &kp HASH    &kp DLLR    &none    &kp ESC    &none    &none    &none    &none
-&kp CARET    &kp AMPS    &kp ASTRK    &kp BSLH    &kp PIPE    &none    &kp LEFT    &kp DOWN    &kp UP    &kp RIGHT
+&MT RSHFT CARET    &MT LALT AMPS    &MT LCTL ASTRK    &MT LCMD BSLH    &kp PIPE    &none    &kp LEFT    &kp DOWN    &kp UP    &kp RIGHT
 &kp TILDE    &kp GRAVE    &none    &none    &kp Q    &none    &none    &none    &none    &none
         &none    &none        &kp TAB    &kp GRAVE 
 >;
