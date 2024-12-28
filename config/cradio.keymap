@@ -46,7 +46,7 @@
         layer0 {
             display-name = "COLEMAK";
             bindings = <
-&kp LA(L)    &kp W    &kp F    &kp P    &ht LS(LC(LALT)) B    &hmr LS(LC(LALT)) J    &kp L    &kp U    &kp Y    &kp LA(W)
+&kp LA(L)    &kp W    &kp F    &kp P    &ht LS(LC(LALT)) B    &ht LS(LC(LALT)) J    &kp L    &kp U    &kp Y    &kp LA(W)
 &ht LSHFT A    &ht LALT R    &ht LCTL S    &ht LCMD T    &kp G    &kp M    &ht RCMD N    &ht RCTL E    &ht RALT I    &ht RSHFT O
 &kp Z    &kp X    &kp C    &kp D    &kp V    &kp K    &kp H    &kp COMMA    &kp DOT    &kp LA(Q)
             &lt 3 ENTER    &lt 1 SPACE            &lt 2 BSPC       &sk LSHFT
