@@ -25,6 +25,35 @@
         zmk,charmap = &charmap_us;
     };
     behaviors {
+        hml: homerow_mods_left {
+          compatible = "zmk,behavior-hold-tap";
+          label = "HOMEROW_MODS_LEFT";
+          #binding-cells = <2>;
+          bindings = <&kp>, <&kp>;
+    
+          flavor = "balanced";
+          tapping-term-ms = <280>;
+          quick-tap-ms = <175>;        // repeat on tap-into-hold
+          // global-quick-tap-ms = <150>;         // requires PR #1387
+          global-quick-tap;
+          hold-trigger-key-positions = <KEYS_R KEYS_T>;
+          hold-trigger-on-release;       // requires PR #1423
+        };
+
+        hmr: homerow_mods_right {
+          compatible = "zmk,behavior-hold-tap";
+          label = "HOMEROW_MODS_RIGHT";
+          #binding-cells = <2>;
+          bindings = <&kp>, <&kp>;
+    
+          flavor = "balanced";
+          tapping-term-ms = <280>;
+          // global-quick-tap-ms = <150>;         // requires PR #1387
+          quick_tap_ms = <175>;
+          global-quick-tap;
+          hold-trigger-key-positions = <KEYS_L KEYS_T>;
+          hold-trigger-on-release;       // requires PR #1423
+        };
         
     };
 
@@ -34,10 +63,10 @@
         layer0 {
             display-name = "COLEMAK";
             bindings = <
-&kp LA(L)    &kp W    &kp F    &kp P    &kp B    &kp J    &kp L    &kp U    &kp Y    &kp LA(W)
-&mt RSHFT A    &mt LALT R    &mt LCTL S    &mt LCMD T    &kp G    &kp M    &mt RCMD N    &mt RCTL E    &mt RALT I    &mt RSHFT O
+&kp LA(L)    &kp W    &kp F    &kp P    &hmr LS(LC(LALT)) B    &hmr LS(LC(LALT)) J    &kp L    &kp U    &kp Y    &kp LA(W)
+&hml LSHFT A    &hml LALT R    &hml LCTL S    &hml LCMD T    &kp G    &kp M    &hmr RCMD N    &hmr RCTL E    &hmr RALT I    &hmr RSHFT O
 &kp Z    &kp X    &kp C    &kp D    &kp V    &kp K    &kp H    &kp COMMA    &kp DOT    &kp LA(Q)
-            &kp LGUI    &lt 1 SPACE            &lt 2 BSPC       &lt 3 TAB 
+            &lt 3 ENTER    &lt 1 SPACE            &lt 2 BSPC       &sk LSHFT
 >;
         };
 
@@ -45,7 +74,7 @@
             display-name = "LEFTTHUMB";
             bindings = <
 &kp EXCL    &kp AT    &kp HASH    &kp DLLR    &none    &kp ESC    &none    &none    &none    &none
-&mt RSHFT CARET    &mt LALT AMPS    &mt LCTL ASTRK    &mt LCMD BSLH    &kp PIPE    &none    &kp LEFT    &kp DOWN    &kp UP    &kp RIGHT
+&hml RSHFT CARET    &hml LALT AMPS    &hml LCTL ASTRK    &hml LCMD BSLH    &kp PIPE    &none    &kp LEFT    &kp DOWN    &kp UP    &kp RIGHT
 &kp TILDE    &kp GRAVE    &none    &none    &kp Q    &none    &none    &none    &none    &none
         &none    &none        &kp TAB    &kp GRAVE 
 >;
@@ -57,7 +86,7 @@
 &kp ASTRK    &kp N7    &kp N8    &kp N9    &kp PLUS    &kp RBKT    &kp RPAR    &kp RBRC    &kp SQT    &kp MINUS
 &kp SLASH    &kp N4    &kp N5    &kp N6    &kp MINUS    &kp LBKT    &kp LPAR    &kp LBRC    &kp DQT    &kp UNDER
 &kp COMMA    &kp N1    &kp N2    &kp N3    &kp EQL    &kp COLON    &kp SEMI    &kp LT    &kp GT    &kp QMARK
-        &kp N0    &kp ENTER        &none    &none 
+        &kp ENTER    &kp N0        &none    &none 
 >;
         };
 
