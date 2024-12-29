@@ -46,7 +46,7 @@
         layer0 {
             display-name = "COLEMAK";
             bindings = <
-&kp LA(L)    &kp W    &kp F    &kp P    &ht LS(LC(LALT)) B    &ht LS(LC(LALT)) J    &kp L    &kp U    &kp Y    &kp LA(W)
+&kp LA(L)    &kp W    &kp F    &ht LS(LC(LALT)) P    &kp B    &kp J    &ht LS(LC(LALT)) L    &kp U    &kp Y    &kp LA(W)
 &ht LSHFT A    &ht LALT R    &ht LCTL S    &ht LCMD T    &kp G    &kp M    &ht RCMD N    &ht RCTL E    &ht RALT I    &ht RSHFT O
 &kp Z    &kp X    &kp C    &kp D    &kp V    &kp K    &kp H    &kp COMMA    &kp DOT    &kp LA(Q)
             &lt 3 ENTER    &lt 1 SPACE            &lt 2 BSPC       &sk LSHFT
@@ -59,7 +59,7 @@
 &kp EXCL    &kp AT    &kp HASH    &kp DLLR    &none    &kp ESC    &none    &none    &none    &none
 &ht RSHFT CARET    &ht LALT AMPS    &ht LCTL ASTRK    &ht LCMD BSLH    &kp PIPE    &none    &kp LEFT    &kp DOWN    &kp UP    &kp RIGHT
 &kp TILDE    &kp GRAVE    &none    &none    &kp Q    &none    &none    &none    &none    &none
-        &none    &none        &kp TAB    &kp GRAVE 
+        &kp ENTER    &none        &kp TAB    &kp GRAVE 
 >;
         };
 
@@ -69,7 +69,7 @@
 &kp ASTRK    &kp N7    &kp N8    &kp N9    &kp PLUS    &kp RBKT    &kp RPAR    &kp RBRC    &kp SQT    &kp MINUS
 &kp SLASH    &kp N4    &kp N5    &kp N6    &kp MINUS    &kp LBKT    &kp LPAR    &kp LBRC    &kp DQT    &kp UNDER
 &kp COMMA    &kp N1    &kp N2    &kp N3    &kp EQL    &kp COLON    &kp SEMI    &kp LT    &kp GT    &kp QMARK
-        &kp ENTER    &kp N0        &none    &none 
+        &kp ENTER    &kp N0        &kp TAB    &none 
 >;
         };
 
@@ -77,9 +77,9 @@
             display-name = "FUNC";
             bindings = <
 &bootloader    &kp F7    &kp F8    &kp F9    &kp F12    &kp RS(LG(N4))    &kp LA(LC(H))    &kp LA(LC(J))    &kp LA(LC(K))    &kp LA(LC(L))
-&none    &kp F4    &kp F5    &kp F6           &kp F11    &none            &none       &none       &none       &none
-&none           &kp F1    &kp F2           &kp F3    &kp F10    &none    &none    &none    &none    &none
-&none      &none        &none            &none 
+&none    &kp F4    &kp F5    &kp F6           &kp F11    &none            &kp RC(LEFT)       &kp RC(DOWN)       &kp RC(UP)       &kp RC(RIGHT)
+&bootloader           &kp F1    &kp F2           &kp F3    &kp F10    &none    &none    &none    &none    &bootloader
+&kp ENTER      &none        &kp TAB            &none 
 >;
         };
     };
